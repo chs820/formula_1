@@ -1,0 +1,23 @@
+version: 2
+
+sources:
+
+  - name: kaggle
+    database: chris-analytics-testing
+    schema: monaco_gp
+    tables:
+
+      - name: raw_circuits
+      - name: raw_constructor_results
+      - name: raw_constructor_standings
+      - name: raw_constructors
+      - name: raw_driver_standings
+      - name: raw_drivers
+      - name: raw_lap_times
+      - name: raw_pit_stops
+      - name: raw_qualifying
+      - name: raw_races
+      - name: raw_results
+      - name: raw_seasons
+      - name: raw_sprint_results
+      - name: raw_status
