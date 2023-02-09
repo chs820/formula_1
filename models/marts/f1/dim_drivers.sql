@@ -9,8 +9,11 @@ drivers as (
 
 final as (
 
-    select *
-    from drivers
+    select
+        *
+        ,drivers.first_name || ' ' || drivers.last_name as driver_name
+    from
+        drivers
 
 )
 
