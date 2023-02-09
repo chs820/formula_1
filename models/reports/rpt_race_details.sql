@@ -17,7 +17,7 @@ circuits as (
 final as (
 
     select
-        races.races_id
+        races.race_id
         ,races.race_name
         ,races.race_date
         ,races.year
