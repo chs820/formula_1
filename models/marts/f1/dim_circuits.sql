@@ -16,3 +16,4 @@ final as (
 
 select *
 from final
+order by 1
