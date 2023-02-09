@@ -29,6 +29,18 @@ renamed as (
             when safe_cast(q3 as string) != '\\N'
             then safe_cast(q3 as string) 
         end as q3_time
+        ,case
+            when safe_cast(q1 as string) != '\\N'
+            then time_diff(safe.parse_time('%M:%E3S', q1), time '00:00:00', millisecond)
+        end as q1_milliseconds
+        ,case
+            when safe_cast(q2 as string) != '\\N'
+            then time_diff(safe.parse_time('%M:%E3S', q2), time '00:00:00', millisecond)
+        end as q2_milliseconds
+        ,case
+            when safe_cast(q3 as string) != '\\N'
+            then time_diff(safe.parse_time('%M:%E3S', q3), time '00:00:00', millisecond)
+        end as q3_milliseconds
 
     from
         source
