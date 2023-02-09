@@ -1,0 +1,20 @@
+version: 2
+
+models:
+
+  - name: dim_circuits
+    description: >
+      Details on historical F1 circuits
+    
+  - name: dim_constructors
+    description: >
+      Details on constructors (teams)
+    
+  - name: dim_drivers
+    description: >
+      Details on historical F1 drivers
+    
+  - name: fct_races
+    description: >
+      Fact table of races
+    
