@@ -70,7 +70,8 @@ race_results as (
     select
         results.race_id
         ,drivers.driver_name as winning_driver_name
-        ,constructors.constructor_name as winning_constructor
+        ,drivers.driver_url as winning_driver_url
+        ,constructors.constructor_name as winning_constructor_name
         ,results.starting_position
         ,results.race_time_milliseconds / 1000 as race_time_seconds
         ,results.race_fastest_lap_speed
@@ -111,7 +112,8 @@ final as (
         ,race_times.race_winner_slowest_lap_seconds
 
         ,race_results.winning_driver_name
-        ,race_results.winning_constructor
+        ,race_results.winning_driver_url
+        ,race_results.winning_constructor_name
         ,race_results.starting_position
         ,race_results.race_time_seconds
         ,race_results.race_status
