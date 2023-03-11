@@ -56,6 +56,19 @@ race_results as (
         
 ),
 
+current_constructors as (
+
+    select
+        distinct constructor_name
+    from
+        race_results
+        inner join races
+            on race_results.race_id = races.race_id
+    where
+        races.year = 2022
+
+),
+
 final as (
 
     select
@@ -75,6 +88,7 @@ final as (
         ,race_results.driver_name
         ,race_results.driver_url
         ,race_results.constructor_name
+        ,case when current_constructors.constructor_name is not null then TRUE else FALSE end as is_current_constructor
         ,race_results.starting_position
         ,race_results.final_position
         ,race_results.race_time_seconds
@@ -86,6 +100,8 @@ final as (
             on races.circuit_id = circuits.circuit_id
         left join race_results
             on races.race_id = race_results.race_id
+        left join current_constructors
+            on race_results.constructor_name = current_constructors.constructor_name
 
 )
 
